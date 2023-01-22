@@ -5,8 +5,9 @@
     <title>El índice</title>
 </head>
 <body>
-<h1>Jander</h1>
+<h1>Security</h1>
 <h2>Usuario: <span th:text="${authentication.name}"></span></h2>
 <h3><span th:text="${authentication.name} ? 'Autenticado' : 'No autenticado'" /></h3>
+<h3><span th:text="${authentication.authorities}" /></h3>
 </body>
 </html>

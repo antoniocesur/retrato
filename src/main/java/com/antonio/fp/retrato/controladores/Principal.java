@@ -15,7 +15,6 @@ public class Principal {
 
     @GetMapping("/")
     public String principal(Model model, Authentication authentication){
-        //retrato.setUsername(authentication.getName());
         model.addAttribute("lista", servicio.findAll());
         model.addAttribute("authentication", authentication);
         return "index";
