@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RetratoService {
     @Autowired
@@ -16,4 +18,8 @@ public class RetratoService {
     }
     @PreAuthorize("#entity.username == authentication.name")
     public void delete(Retrato entity) {repositorio.delete(entity);}
+
+    public List<Retrato> findAll(){
+        return repositorio.findAll();
+    }
 }

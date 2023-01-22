@@ -15,12 +15,9 @@ public class Principal {
 
     @GetMapping("/")
     public String principal(Model model, Authentication authentication){
-        Retrato retrato=new Retrato();
-        retrato.setImagen("imagen.jpg");
-        retrato.setContenido("La mejor foto");
-        retrato.setUsername(authentication.getName());
-        servicio.save(retrato);
-
+        //retrato.setUsername(authentication.getName());
+        model.addAttribute("lista", servicio.findAll());
+        model.addAttribute("authentication", authentication);
         return "index";
     }
 }
