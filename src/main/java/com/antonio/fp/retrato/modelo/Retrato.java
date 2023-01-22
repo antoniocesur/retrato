@@ -12,9 +12,7 @@ public class Retrato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
     private String imagen;
     private String contenido;
     private String username;
-
 }

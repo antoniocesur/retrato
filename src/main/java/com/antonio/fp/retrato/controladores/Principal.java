@@ -1,5 +1,6 @@
 package com.antonio.fp.retrato.controladores;
 
+import com.antonio.fp.retrato.modelo.Retrato;
 import com.antonio.fp.retrato.servicios.RetratoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -14,6 +15,11 @@ public class Principal {
 
     @GetMapping("/")
     public String principal(Model model, Authentication authentication){
+        Retrato retrato=new Retrato();
+        retrato.setImagen("imagen.jpg");
+        retrato.setContenido("La mejor foto");
+        retrato.setUsername(authentication.getName());
+        servicio.save(retrato);
 
         return "index";
     }
